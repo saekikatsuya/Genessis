@@ -14,8 +14,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initItem();
         ListView listView=(ListView)findViewById(R.id.list_view);
         StudentAdapter adapter = new StudentAdapter(MainActivity.this, R.layout.list_item, studentList);
+        listView.setAdapter(adapter);
     }
 
         private void initItem(){
