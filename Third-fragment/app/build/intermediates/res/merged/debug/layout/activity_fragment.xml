@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="#555"
+    tools:context="com.yvjing.third_fragment.FragmentActivity">
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:text="111"
+        android:textColor="#111"
+        android:textSize="20sp"
+        android:state_pressed="true"/>
+</RelativeLayout>
+<!-- From: file:/C:/Users/Yvjing/AndroidProjects/Third-fragment/app/src/main/res/layout/activity_fragment.xml -->
