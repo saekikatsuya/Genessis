@@ -1,0 +1,263 @@
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=utf-8"/>
+		<title>传说中的网页-报名</title>
+	</head>
+	<script type="text/javascript" src="flexible.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			font-family: "华文行楷";
+		}
+		.center{
+			width:750px;
+			height:1600px;
+			margin: auto;
+			left: 0px;
+			right: 0px;
+			position: absolute;
+		}
+		input{
+			margin-top: 10px;
+			margin-left: 11px;
+			padding-left: 7px;
+		}
+		input[name="enroll"]{
+			padding-left: 0px;
+		}
+	</style>
+	<script type="text/javascript">
+		function chickName1(){
+			var id=document.getElementById('name1');
+			var idValue=id.value;
+			var reId=document.getElementById('rename1');
+			var re1=/^[\u4e00-\u9fa5]{2,6}$/;
+			if(!(re1.test(idValue))){
+				reId.innerHTML='请输入正确的姓名';
+				reId.style.color="red";
+				reId.style.fontSize="16px";
+				return false;
+			}
+			else{
+				reId.innerHTML=" ";
+				return true;
+			}
+
+		}
+		function chickSex1(){
+			var id1=document.getElementById('man1');
+			var id2=document.getElementById('woman1');
+			var reId=document.getElementById('resex1');
+			if(id1.checked==true||id2.checked==true){
+				return true;
+			}
+			else{
+				reId.innerHTML='请勾选性别';
+				reId.style.color="red";
+				reId.style.fontSize="16px";
+				return false;
+			}
+		}
+		function chickGrade1(){
+			var id=document.getElementById('grade1');
+			var idValue=id.value;
+			var idLength=idValue.length;
+			var reId=document.getElementById('regrade1');
+			if(!isNaN(idValue)){
+				if(idLength!=4){
+					reId.innerHTML='请输入正确年级';
+					reId.style.color="red";
+					reId.style.fontSize="16px";
+					return false;
+				}
+				else{
+					reId.innerHTML=" ";
+					return true;
+				}
+			}
+		}
+		function chickTel1(){
+			var id=document.getElementById('tel1');
+			var idValue=id.value;
+			var idLength=idValue.length;
+			var reId=document.getElementById('retel1');
+			if(!isNaN(idValue)){
+				if(idLength!=11){
+					reId.innerHTML='请输入正确号码';
+					reId.style.color="red";
+					reId.style.fontSize="16px";
+					return false;
+				}
+				else{
+					reId.innerHTML=" ";
+					return true;
+				}
+			}
+		}
+		function chickName2(){
+			var id=document.getElementById('name2');
+			var idValue=id.value;
+			var reId=document.getElementById('rename2');
+			var re1=/^[\u4e00-\u9fa5]{2,6}$/;
+			if(!(re1.test(idValue))){
+				reId.innerHTML='请输入正确的姓名';
+				reId.style.color="red";
+				reId.style.fontSize="16px";
+				return false;
+			}
+			else{
+				reId.innerHTML=" ";
+				return true;
+			}
+		}
+		function chickSex2(){
+			var id1=document.getElementById('man2');
+			var id2=document.getElementById('woman2');
+			var reId=document.getElementById('resex2');
+			if(id1.checked==true||id2.checked==true){
+				return true;
+			}
+			else{
+				reId.innerHTML='请勾选性别';
+				reId.style.color="red";
+				reId.style.fontSize="16px";
+				return false;
+			}
+		}
+		function chickGrade2(){
+			var id=document.getElementById('grade2');
+			var idValue=id.value;
+			var idLength=idValue.length;
+			var reId=document.getElementById('regrade2');
+			if(!isNaN(idValue)){
+				if(idLength!=4){
+					reId.innerHTML='请输入正确年级';
+					reId.style.color="red";
+					reId.style.fontSize="16px";
+					return false;
+				}
+				else{
+					reId.innerHTML=" ";
+					return true;
+				}
+			}
+		}
+		function chickTel2(){
+			var id=document.getElementById('tel2');
+			var idValue=id.value;
+			var idLength=idValue.length;
+			var reId=document.getElementById('retel2');
+			if(!isNaN(idValue)){
+				if(idLength!=11){
+					reId.innerHTML='请输入正确号码';
+					reId.style.color="red";
+					reId.style.fontSize="16px";
+					return false;
+				}
+				else{
+					reId.innerHTML=" ";
+					return true;
+				}
+			}
+		}
+		function chickAll(){
+			if(chickName1()==0&&chickGrade1()==0&&chickTel1()==0&&chickName2()==0&&chickGrade2()==0&&chickTel2()==0){
+				alert("请核对信息");
+			}
+			else{
+				if(chickSex1()==0||chickSex2()==0){
+					alert('请勾选性别');
+				}
+				else{
+					document.getElementById('enroll').submit();
+				}
+			}
+		}
+	</script>
+	<body>
+		<div class="center">
+			<form action="form.php" method="post" id="enroll">
+				姓名：
+				<input type="text" name="name1" id="name1" onblur="chickName1()" />
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="rename1"></span>
+				<br/>
+				性别：
+				<input type="radio" name="sex1" id="man1" value="男" />男
+				<input type="radio" name="sex1" id="woman1" value="女" />女
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="resex1"></span>
+				<br/>
+				学院：
+				<select name="academy1" id="academy1">
+					<option value="通信与信息工程学院">通信与信息工程学院</option>
+					<option value="计算机科学与技术学院">计算机科学与技术学院</option>
+					<option value="自动化学院">自动化学院</option>
+					<option value="先进制造工程学院">先进制造工程学院</option>
+					<option value="光电工程学院/重庆国际半导体学院">光电工程学院/重庆国际半导体学院</option>
+					<option value="软件工程学院">软件工程学院</option>
+					<option value="生物信息学院">生物信息学院</option>
+					<option value="理学院">理学院</option>
+					<option value="经济管理学院">经济管理学院</option>
+					<option value="传媒艺术学院">传媒艺术学院</option>
+					<option value="外国语学院">外国语学院</option>
+					<option value="国际学院">国际学院</option>
+					<option value="法学院">法学院</option>
+					<option value="马克思主义学院">马克思主义学院</option>
+					<option value="体育学院">体育学院</option>
+					<option value="继续教育学院">继续教育学院</option>
+					<option value="电信研究院">电信研究院</option>
+				</select>
+				<br/>
+				<br/>
+				年级：
+				<input type="text" name="grade1" id="grade1" onblur="chickGrade1()" />
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="regrade1"></span>
+				<br/>
+				联系方式：
+				<input type="text" name="tel1" id="tel1" onblur="chickTel1()" />
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="retel1"></span>
+				<br/>
+				<br/>
+				姓名：
+				<input type="text" name="name2" id="name2" onblur="chickName2()" />
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="rename2"></span>
+				<br/>
+				性别：
+				<input type="radio" name="sex2" id="man2" value="男" />男
+				<input type="radio" name="sex2" id="woman2" value="女" />女
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="resex2"></span>
+				<br/>
+				学院：
+				<select name="academy2" id="academy2">
+					<option value="通信与信息工程学院">通信与信息工程学院</option>
+					<option value="计算机科学与技术学院">计算机科学与技术学院</option>
+					<option value="自动化学院">自动化学院</option>
+					<option value="先进制造工程学院">先进制造工程学院</option>
+					<option value="光电工程学院/重庆国际半导体学院">光电工程学院/重庆国际半导体学院</option>
+					<option value="软件工程学院">软件工程学院</option>
+					<option value="生物信息学院">生物信息学院</option>
+					<option value="理学院">理学院</option>
+					<option value="经济管理学院">经济管理学院</option>
+					<option value="传媒艺术学院">传媒艺术学院</option>
+					<option value="外国语学院">外国语学院</option>
+					<option value="国际学院">国际学院</option>
+					<option value="法学院">法学院</option>
+					<option value="马克思主义学院">马克思主义学院</option>
+					<option value="体育学院">体育学院</option>
+					<option value="继续教育学院">继续教育学院</option>
+					<option value="电信研究院">电信研究院</option>
+				</select>
+				<br/>
+				<br/>
+				年级：
+				<input type="text" name="grade2" id="grade2" onblur="chickGrade2()" />
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="regrade2"></span>
+				<br/>
+				联系方式：
+				<input type="text" name="tel2" id="tel2" onblur="chickTel2()" />
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="retel2"></span>
+			</form>
+			<input type="button" name="enroll" value="提交" onclick="chickAll()"/>
+		</div>
+	</body>
+</html>
